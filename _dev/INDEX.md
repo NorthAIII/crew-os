@@ -11,6 +11,8 @@
 
 ## Tüm Dokümanlar
 
+> **CLAUDE.md** repo kökündedir (`/CLAUDE.md`) — Claude Code her oturum otomatik okur; oturum başlangıç protokolü + projeye özgü kurallar oradadır.
+
 ### Temel Dokümanlar (Her Oturum Başında OKU)
 
 1. **OVERVIEW.md** — Proje kimliği, stack, amaç, kapsam

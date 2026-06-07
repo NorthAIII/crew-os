@@ -1,6 +1,6 @@
 # DURUM — Proje Dashboard
 
-**Son Güncelleme:** 2026-06-07 — Crew OS kuruldu (v3 çekirdeği taşındı, lokal boot yeşil), DevFlow eklendi, map-codebase ile _dev/ yapısı oluşturuldu.
+**Son Güncelleme:** 2026-06-07 — DevFlow kurulumu tamamlandı (map-codebase + prd + kickoff + CLAUDE.md); Phase 1 (şema+rebrand) discuss'a hazır.
 
 <!-- KURAL: Bu satır her oturum sonunda ÜZERİNE YAZILIR — tek satır, tek cümle. "Önceki:" / "Eski:" prefix ile kümülatif yığma YASAK; HTML comment'e sarma da yasak (CLAUDE.md → Doküman Disiplini). Tarih + kısa özet yeterli; detay için git log + ilgili PHASE/TASK dokümanları. -->
 
@@ -8,11 +8,11 @@
 
 ## Aktif Faz
 
-**Faz:** — (faza henüz girilmedi)
-**Milestone:** —
-**Adım:** kickoff öncesi — sıradaki: `/devflow:prd`
-**İlerleme:** —
-**Faz Dokümanı:** —
+**Faz:** Phase 1 — Şema dikişleri + rebrand temizliği *(geçici ad; discuss-phase kesinleştirir)*
+**Milestone:** `outreach_state` pointer şeması + leads/meetings Twenty'ye devre hazır + "Bunker→Crew" temiz + 44 test yeşil
+**Adım:** discuss — sıradaki: `/devflow:discuss-phase 1`
+**İlerleme:** Faz henüz başlamadı (kurulum tamam)
+**Faz Dokümanı:** `phases/PHASE-1.md` (discuss-phase'de oluşturulacak)
 
 ---
 
@@ -69,4 +69,4 @@ _(Henüz DevFlow task'ı çalıştırılmadı. Faz-öncesi kurulum git geçmişi
 
 ---
 
-**Son Güncelleme:** 2026-06-07 — Crew OS kuruldu (v3 çekirdeği taşındı, lokal boot yeşil), DevFlow eklendi, map-codebase ile _dev/ yapısı oluşturuldu.
+**Son Güncelleme:** 2026-06-07 — DevFlow kurulumu tamamlandı (map-codebase + prd + kickoff + CLAUDE.md); Phase 1 (şema+rebrand) discuss'a hazır.
