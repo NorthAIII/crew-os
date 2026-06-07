@@ -40,15 +40,22 @@ Kickoff/PRD sırasında doldurulur. Boş bir alan "henüz konuşulmadı" demekti
 
 ### Proje Ufku
 
-[PRD/kickoff'ta doldurulacak]
+Yıllarca yaşayacak bir **iç altyapı** — kararlar kalıcılığa göre değerlendirilir. "Şimdilik çalışıyor" bir bitiş kriteri değil. İleride başka firmalara satılabilme ihtimali açık tutulur (zorlanmaz), bu yüzden çok-tenant temeli korunur.
 
 ### En Yüksek Öncelikli Eksenler
 
-[PRD/kickoff'ta doldurulacak]
+1. **Veri tutarlılığı** (QUALITY → Veri Tutarlılığı) — Twenty tek gerçek kaynak; ikinci kopya yok.
+2. **Güvenlik** (sır yönetimi + auth) — iç sistem ama sırlar/erişim gevşek bırakılmaz.
+3. **Hata yönetimi / görünürlük** — dış sistem (LLM/Gmail/Twenty/Postiz) çökerse ajan sessizce devre dışı kalmaz, görünür olur.
+
+Bunlar **hız ve estetikten** önce gelir.
 
 ### Pazarlık Konusu Olmayanlar
 
-[PRD/kickoff'ta doldurulacak]
+- **İnsan onay kapısı** — ajanlar güven kazanana kadar (Graduated Autonomy) aksiyonlar insan onayından geçer; onay-öğrenme döngüsü sistemin özünü oluşturur, atlanmaz.
+- **Twenty = CRM'in tek gerçek kaynağı** — lead/contact/deal verisi Crew DB'de çoğaltılmaz.
+- **Sır güvenliği** — secret koda gömülmez; `.env`/merkezi model, koda asla.
+- **Test atlanmaz** — devraldığımız 44 test korunur, her yetenek kendi güvencesini getirir.
 
 ---
 
