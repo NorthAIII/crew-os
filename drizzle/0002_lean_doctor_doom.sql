@@ -1,0 +1,1 @@
+CREATE UNIQUE INDEX "meetings_calcom_uniq" ON "meetings" USING btree ("tenant_id","calcom_booking_id") WHERE "meetings"."calcom_booking_id" IS NOT NULL;

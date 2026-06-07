@@ -1,0 +1,52 @@
+# Bunker OS v3 — çalışma-zamanı stack'i: app + worker + postgres. SADECE BU.
+# (n8n YOK, Redis YOK, Qdrant YOK, Adminer YOK — eski yapıya göre çok daha hafif.)
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: bunker-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-bunker}
+      POSTGRES_USER: ${POSTGRES_USER:-bunker_user}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?POSTGRES_PASSWORD gerekli}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    # Port dışarı AÇILMAZ — yalnızca iç network. (Güvenlik: eski stack'te 5432 açıktı.)
+    expose:
+      - "5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-bunker_user}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: bunker-app
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+    env_file: .env
+    environment:
+      NODE_ENV: production
+    ports:
+      - "3000:3000"
+
+  worker:
+    build:
+      context: .
+      dockerfile: Dockerfile.worker
+    container_name: bunker-worker
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+    env_file: .env
+    environment:
+      NODE_ENV: production
+
+volumes:
+  pgdata:
